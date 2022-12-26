@@ -18,8 +18,8 @@ class ShabbatClose
         $this->time = date('H:i');
 
         // for testings
-        $this->day = 'Friday';
-        $this->time = '20:00';
+        // $this->day = 'Friday';
+        // $this->time = '20:00';
 
         // Allow admin section to be used
         if (strpos($_SERVER['REQUEST_URI'], 'wp-admin') || strpos($_SERVER['REQUEST_URI'], 'wp-login')) {
