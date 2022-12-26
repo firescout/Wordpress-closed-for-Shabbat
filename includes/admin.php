@@ -74,7 +74,7 @@ class ShabbatAdmin extends ShabbatClose
                 </tr>
                 <tr valign="top">
                     <th scope="row">
-                        Redirect URL
+                        Load page content
                     </th>
                     <td><?php wp_dropdown_pages(array('name'=>'redirect_url', 'show_option_none'=>'Select Custom Page', 'option_none_value'=>'Select Custom Page', 'option_none_value'=>'0', 'selected'=>$this->form_data['redirect_url']));?></td>
                 </tr>

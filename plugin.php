@@ -2,7 +2,7 @@
 /**
  * @wordpress-plugin
  * Plugin Name:       Shabbat - Closed
- * Description:       This plugin will automaticly close the website for Shabbat, based on the published times from https://www.hebcal.com/shabbat. You can also set custom start and end times.
+ * Description:       This plugin will automaticly close the website for Shabbat between 17:00 and 18:00, and display published times from https://www.hebcal.com/shabbat. You can also set custom start and end times.
  * Version:           1.0
  * Author:            Orel Krispel
  * License:           GPL-2.0+

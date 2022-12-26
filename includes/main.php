@@ -73,6 +73,9 @@ class ShabbatClose
     {
         if ($closed === true) {
             $page = get_post($this->setting->redirect_url);
+            // echo "<pre>";
+            // print_r($page);
+            // die;
             $this->renderPage($page);
         } else if ($closed === 'default') {
             $this->renderDefault();
@@ -84,7 +87,7 @@ class ShabbatClose
         load_template(plugin_dir_path(__DIR__)."/views/closed.php", true, $this->setting);
         exit;
     }
-
+    
     public function renderPage($page)
     {
         load_template(plugin_dir_path(__DIR__)."/views/closed_page.php", true, [$this->setting, $page]);
