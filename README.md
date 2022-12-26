@@ -1,6 +1,6 @@
 # Shabbat wordpress plugin
 
-This plugin is for closeing a wordpress site during Shabbat times
+This plugin is for closing a wordpress site during Shabbat times
 
 Custom times can be set.
 
