@@ -17,7 +17,7 @@ class ShabbatClose
         $this->day_arr = array('Friday','Saturday');
         $this->time = date('H:i');
 
-        // for testings
+        // for testing
         // $this->day = 'Friday';
         // $this->time = '20:00';
 
@@ -30,8 +30,8 @@ class ShabbatClose
         $this->get_settings();
         
         // Start date check
-        $check_day = $this->checkDay();
-        $this->isSiteClosed($check_day);
+        $check_day = $this->check_day();
+        $this->is_site_closed($check_day);
     }
 
     private function get_settings() {
@@ -41,15 +41,15 @@ class ShabbatClose
         }
     }
 
-    private function checkDay()
+    private function check_day()
     {
         if (in_array($this->day, $this->day_arr)) {
-            return $this->checkTime();
+            return $this->check_time();
         }
         return false;
     }
 
-    private function checkTime()
+    private function check_time()
     {
         if (empty($this->setting)) {
             if ($this->day == 'Friday' && $this->time > '17:00' || $this->day == 'Saturday' && $this->time < '18:00') {
@@ -69,26 +69,26 @@ class ShabbatClose
         }
     }
 
-    public function isSiteClosed($closed)
+    public function is_site_closed($closed)
     {
         if ($closed === true) {
             $page = get_post($this->setting->redirect_url);
             // echo "<pre>";
             // print_r($page);
             // die;
-            $this->renderPage($page);
+            $this->render_page($page);
         } else if ($closed === 'default') {
-            $this->renderDefault();
+            $this->render_default();
         }
     }
     
-    public function renderDefault()
+    public function render_default()
     {
         load_template(plugin_dir_path(__DIR__)."/views/closed.php", true, $this->setting);
         exit;
     }
     
-    public function renderPage($page)
+    public function render_page($page)
     {
         load_template(plugin_dir_path(__DIR__)."/views/closed_page.php", true, [$this->setting, $page]);
         exit;
