@@ -38,6 +38,12 @@ class ShabbatClose
         $settings = $this->data->get_results("SELECT * FROM ". SHABBAT_CLOSE_SETTINGS ." WHERE `id` = 1");
         if (!empty($settings)) {
             $this->setting = $settings[0];
+            if ($this->setting->start_time == "") {
+                $this->setting->start_time = "17:00";
+            }
+            if ($this->setting->end_time == "") {
+                $this->setting->end_time = "18:00";
+            }
         }
     }
 
